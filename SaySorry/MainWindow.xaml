@@ -1,0 +1,17 @@
+﻿<metro:MetroWindow
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:metro="http://metro.mahapps.com/winfx/xaml/controls"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" x:Class="SaySorry.MainWindow"
+    Title="十万次对不起" Height="350" Width="825" GlowBrush="{DynamicResource AccentColorBrush}"
+    DataContext="{Binding Main, Mode=OneWay, Source={StaticResource Locator}}">
+    <metro:TransitioningContentControl>
+
+        <i:Interaction.Triggers>
+            <i:EventTrigger>
+                <i:InvokeCommandAction Command="{Binding StartToSay}" />
+            </i:EventTrigger>
+        </i:Interaction.Triggers>
+        <Label Content="{Binding Text}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="106" />
+    </metro:TransitioningContentControl>
+</metro:MetroWindow>
